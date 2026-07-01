@@ -513,6 +513,10 @@ img {
   font-weight: 600;
 }
 
+.contact-box a:not(.btn):hover {
+    color: white;
+}
+
 footer {
   border-top: 1px solid rgba(201,168,74,0.16);
   text-align: center;
