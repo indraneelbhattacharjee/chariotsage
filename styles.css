@@ -136,12 +136,38 @@ img {
 
 .hero-card {
   position: relative;
-  padding: 1.2rem;
+  padding: 0.7rem;
   background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(10,10,10,0.95));
   border: 1px solid var(--border);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.logo-frame {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(240, 212, 138, 0.18);
+  border-radius: 18px;
+  background: #15120c;
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: inherit;
+  filter: saturate(0.94) contrast(1.04);
+  mix-blend-mode: screen;
+  opacity: 0.94;
+  transition: transform 0.8s cubic-bezier(.2,.8,.2,1), filter 0.8s ease;
+}
+
+.hero-card:hover .hero-logo {
+  transform: scale(1.025);
+  filter: saturate(1.08) contrast(1.05);
 }
 
 .card-orbit {
@@ -529,5 +555,391 @@ footer {
 
   .hero {
     padding-top: 0.2rem;
+  }
+}
+
+/* Birth details and North Indian chart */
+.form-intro {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-intro .eyebrow,
+.form-intro h3 {
+  margin: 0;
+}
+
+.form-intro h3 {
+  margin-top: 0.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+}
+
+.form-step {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--accent-2);
+  background: radial-gradient(circle, rgba(201, 168, 74, 0.16), transparent 70%);
+}
+
+.field-row,
+.location-fields {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.field-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+.location-fields {
+  grid-template-columns: 1fr;
+}
+
+.astrology-form select {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #17140f;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.8rem 2.2rem 0.8rem 0.9rem;
+  font: inherit;
+  color-scheme: dark;
+}
+
+.astrology-form input[type="date"],
+.astrology-form input[type="time"] {
+  color-scheme: dark;
+  min-height: 45px;
+}
+
+.astrology-form input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: sepia(1) saturate(2) brightness(1.35);
+  opacity: 0.9;
+}
+
+.field-note {
+  margin: -0.2rem 0 0;
+  color: #a99e82;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.reveal-button {
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.reveal-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.reveal-button.is-loading span:last-child {
+  animation: celestial-spin 1.2s linear infinite;
+}
+
+.chart-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  grid-template-columns: minmax(340px, 1.2fr) minmax(180px, 0.65fr);
+  background:
+    radial-gradient(circle at 34% 48%, rgba(201, 168, 74, 0.09), transparent 40%),
+    linear-gradient(145deg, rgba(24, 20, 14, 0.98), rgba(6, 6, 8, 0.98));
+}
+
+.chart-aura {
+  position: absolute;
+  z-index: -1;
+  width: 28rem;
+  aspect-ratio: 1;
+  left: -8rem;
+  top: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 74, 0.15), transparent 66%);
+  filter: blur(12px);
+  opacity: 0;
+}
+
+.chart-stars {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle at 15% 20%, #f4d989 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 24%, #f4d989 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 76%, #f4d989 0 1px, transparent 1.5px),
+    radial-gradient(circle at 46% 88%, #f4d989 0 1px, transparent 1.5px);
+}
+
+.north-kundali,
+.chart-details {
+  position: relative;
+  z-index: 1;
+}
+
+.kundali-title h3 {
+  margin: 0.2rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  color: #fff4d2;
+}
+
+#chart-signature {
+  margin: 0.25rem 0 0.8rem;
+  font-size: 0.82rem;
+}
+
+.kundali-chart {
+  position: relative;
+  display: block;
+  width: min(100%, 560px);
+  max-width: none;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background:
+    radial-gradient(circle at center, rgba(201, 168, 74, 0.13), transparent 32%),
+    rgba(255,255,255,0.012);
+  box-shadow: inset 0 0 40px rgba(201, 168, 74, 0.035);
+}
+
+.kundali-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(224, 190, 91, 0.68);
+  stroke-width: 1.4;
+  filter: drop-shadow(0 0 5px rgba(201, 168, 74, 0.22));
+}
+
+.house {
+  position: absolute;
+  z-index: 2;
+  width: 25%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.12rem;
+  color: #f4e7c0;
+  font-size: clamp(0.55rem, 1vw, 0.72rem);
+  line-height: 1.08;
+  transform: translate(-50%, -50%);
+  word-break: normal;
+}
+
+.house strong {
+  margin: 0;
+  color: #e8c96d;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.64rem, 1.1vw, 0.85rem);
+}
+
+.house-number {
+  position: absolute;
+  top: -0.1rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: rgba(240, 212, 138, 0.65) !important;
+  font-size: 0.65rem !important;
+}
+
+.planets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.18rem 0.32rem;
+  margin-top: 0.12rem;
+  color: #f3ead3;
+  line-height: 1.15;
+}
+
+.planet {
+  display: inline-block;
+  color: #f7ecd0;
+  text-shadow: 0 0 9px rgba(201, 168, 74, 0.32);
+}
+
+.house-1 { left: 50%; top: 18%; }
+.house-2 { left: 25%; top: 9%; }
+.house-3 { left: 9%; top: 25%; }
+.house-4 { left: 18%; top: 50%; }
+.house-5 { left: 9%; top: 75%; }
+.house-6 { left: 25%; top: 91%; }
+.house-7 { left: 50%; top: 82%; }
+.house-8 { left: 75%; top: 91%; }
+.house-9 { left: 91%; top: 75%; }
+.house-10 { left: 82%; top: 50%; }
+.house-11 { left: 91%; top: 25%; }
+.house-12 { left: 75%; top: 9%; }
+
+.chart-core {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--accent-2);
+  font-size: 1.15rem;
+  text-shadow: 0 0 18px rgba(240, 212, 138, 0.8);
+}
+
+.chart-details {
+  padding: 0.9rem;
+  border-left: 1px solid rgba(201, 168, 74, 0.18);
+}
+
+#chart-highlights {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+  list-style: none;
+}
+
+.insight {
+  position: relative;
+  padding: 0.65rem 0.65rem 0.65rem 1.4rem;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.025);
+}
+
+.insight::before {
+  content: '✦';
+  position: absolute;
+  left: 0.45rem;
+  color: var(--accent);
+}
+
+.is-revealing .kundali-lines {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+  animation: draw-chart 1.8s cubic-bezier(.22,.75,.2,1) forwards;
+}
+
+.is-revealing .house {
+  opacity: 0;
+  animation: reveal-house 0.65s ease forwards;
+}
+
+.is-revealing .house-1 { animation-delay: .35s; }
+.is-revealing .house-2 { animation-delay: .42s; }
+.is-revealing .house-3 { animation-delay: .49s; }
+.is-revealing .house-4 { animation-delay: .56s; }
+.is-revealing .house-5 { animation-delay: .63s; }
+.is-revealing .house-6 { animation-delay: .70s; }
+.is-revealing .house-7 { animation-delay: .77s; }
+.is-revealing .house-8 { animation-delay: .84s; }
+.is-revealing .house-9 { animation-delay: .91s; }
+.is-revealing .house-10 { animation-delay: .98s; }
+.is-revealing .house-11 { animation-delay: 1.05s; }
+.is-revealing .house-12 { animation-delay: 1.12s; }
+
+.is-revealing .chart-core {
+  animation: core-awakens 2.2s ease both;
+}
+
+.is-revealing .chart-aura {
+  animation: aura-bloom 2.4s ease both;
+}
+
+@keyframes draw-chart {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes reveal-house {
+  from { opacity: 0; filter: blur(8px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes core-awakens {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.2) rotate(-90deg); }
+  60% { opacity: 1; transform: translate(-50%, -50%) scale(1.4) rotate(15deg); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); }
+}
+
+@keyframes aura-bloom {
+  0% { opacity: 0; transform: scale(.5); }
+  55% { opacity: 1; }
+  100% { opacity: .55; transform: scale(1.15); }
+}
+
+@keyframes celestial-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-revealing .kundali-lines,
+  .is-revealing .house,
+  .is-revealing .chart-core,
+  .is-revealing .chart-aura,
+  .reveal-button.is-loading span:last-child {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .astrology-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .chart-card {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-details {
+    border-left: 0;
+    border-top: 1px solid rgba(201, 168, 74, 0.18);
+  }
+
+  .house {
+    width: 29%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .kundali-chart {
+    width: 100%;
+  }
+
+  .house {
+    width: 31%;
+    font-size: 0.52rem;
   }
 }

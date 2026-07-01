@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="assets/chariot-sage-logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -44,13 +45,12 @@
 
           <div class="hero-card">
             <div class="card-orbit"></div>
-            <div class="card-inner">
-              <p class="card-label">Guiding light</p>
-              <h2>Navigate life with clarity and purpose.</h2>
-              <p>
-                Each reading is designed to help you align your choices with your truth,
-                unlock growth, and move forward with confidence.
-              </p>
+            <div class="logo-frame">
+              <img
+                class="hero-logo"
+                src="assets/chariot-sage-logo.png"
+                alt="Chariot Sage — Vedic Astrological Counsel"
+              />
             </div>
           </div>
         </div>
@@ -108,23 +108,50 @@
 
           <div class="astrology-grid">
             <form class="astrology-form" id="chart-form">
+              <div class="form-intro">
+                <span class="form-step">01</span>
+                <div>
+                  <p class="eyebrow">Birth details</p>
+                  <h3>Enter the moment you arrived.</h3>
+                </div>
+              </div>
               <label>
                 <span>Name</span>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required />
               </label>
-              <label>
-                <span>Date of birth</span>
-                <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" autocomplete="bday" required />
+              <div class="field-row">
+                <label>
+                  <span>Date of birth</span>
+                  <input type="date" id="dob" name="dob" autocomplete="bday" required />
+                </label>
+                <label>
+                  <span>Time of birth</span>
+                  <input type="time" id="tob" name="tob" autocomplete="bday-time" required />
+                </label>
+              </div>
+              <div class="location-fields">
+                <label>
+                  <span>Country</span>
+                  <select id="country" name="country" required></select>
+                </label>
+                <label>
+                  <span>State / Region</span>
+                  <select id="state" name="state" required></select>
+                </label>
+                <label>
+                  <span>City</span>
+                  <select id="city" name="city" required></select>
+                </label>
+              </div>
+              <label class="manual-place-field is-hidden" id="manual-place-field">
+                <span>City or town</span>
+                <input type="text" id="manual-place" name="manualPlace" placeholder="Enter your city or town" />
               </label>
-              <label>
-                <span>Time of birth</span>
-                <input type="text" id="tob" name="tob" placeholder="HH:MM" autocomplete="off" required />
-              </label>
-              <label>
-                <span>Place of birth</span>
-                <input type="text" id="pob" name="pob" placeholder="City, Country" autocomplete="address-level2" required />
-              </label>
-              <button type="submit" class="btn btn-primary">Reveal the chart</button>
+              <p class="field-note">Choose “Other” to enter a place not listed. Your birth time is interpreted in the selected location’s local time.</p>
+              <button type="submit" class="btn btn-primary reveal-button">
+                <span>Reveal my birth chart</span>
+                <span aria-hidden="true">✦</span>
+              </button>
             </form>
 
             <div class="astrology-output">
@@ -134,6 +161,8 @@
               </div>
 
               <div class="chart-card" id="chart-output" aria-live="polite">
+                <div class="chart-aura" aria-hidden="true"></div>
+                <div class="chart-stars" aria-hidden="true"></div>
                 <div class="north-kundali">
                   <div class="kundali-title">
                     <p class="chart-kicker" id="chart-kicker">Birth chart preview</p>
@@ -141,30 +170,28 @@
                     <p id="chart-signature"></p>
                   </div>
                   <div class="kundali-chart" id="kundali-chart">
-                    <div class="row-1">
-                      <div class="house house-12" id="house-12"></div>
-                      <div class="house house-1" id="house-1"></div>
-                      <div class="house house-2" id="house-2"></div>
-                    </div>
-                    <div class="row-2">
-                      <div class="house house-11" id="house-11"></div>
-                      <div class="center-box"></div>
-                      <div class="house house-3" id="house-3"></div>
-                    </div>
-                    <div class="row-3">
-                      <div class="house house-10" id="house-10"></div>
-                      <div class="house house-9" id="house-9"></div>
-                      <div class="house house-4" id="house-4"></div>
-                    </div>
-                    <div class="row-4">
-                      <div class="house house-8" id="house-8"></div>
-                      <div class="house house-7" id="house-7"></div>
-                      <div class="house house-6" id="house-6"></div>
-                      <div class="house house-5" id="house-5"></div>
-                    </div>
+                    <svg class="kundali-lines" viewBox="0 0 600 600" role="img" aria-label="North Indian diamond birth chart">
+                      <rect x="2" y="2" width="596" height="596" rx="3"></rect>
+                      <path d="M300 2 L598 300 L300 598 L2 300 Z"></path>
+                      <path d="M2 2 L598 598 M598 2 L2 598"></path>
+                    </svg>
+                    <div class="house house-1" id="house-1"></div>
+                    <div class="house house-2" id="house-2"></div>
+                    <div class="house house-3" id="house-3"></div>
+                    <div class="house house-4" id="house-4"></div>
+                    <div class="house house-5" id="house-5"></div>
+                    <div class="house house-6" id="house-6"></div>
+                    <div class="house house-7" id="house-7"></div>
+                    <div class="house house-8" id="house-8"></div>
+                    <div class="house house-9" id="house-9"></div>
+                    <div class="house house-10" id="house-10"></div>
+                    <div class="house house-11" id="house-11"></div>
+                    <div class="house house-12" id="house-12"></div>
+                    <div class="chart-core" aria-hidden="true">✦</div>
                   </div>
                 </div>
                 <div class="chart-details">
+                  <p class="eyebrow">Chart insights</p>
                   <ul id="chart-highlights"></ul>
                 </div>
               </div>
