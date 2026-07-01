@@ -1,0 +1,533 @@
+:root {
+  --bg: #050505;
+  --panel: #111111;
+  --panel-2: #171717;
+  --text: #f6efe0;
+  --muted: #b8a77a;
+  --accent: #c9a84a;
+  --accent-2: #f0d48a;
+  --border: rgba(201, 168, 74, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(201, 168, 74, 0.16), transparent 25%),
+    linear-gradient(135deg, var(--bg), #0e0e0e 60%, #060606);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 3rem;
+}
+
+.hero {
+  padding: 1rem 0 3rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0 2rem;
+}
+
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  color: var(--accent-2);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent-2);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.hero h1,
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+}
+
+.intro {
+  font-size: 1.05rem;
+  color: #ddd3b7;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #8e6d16);
+  color: #080808;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+
+.hero-card {
+  position: relative;
+  padding: 1.2rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(10,10,10,0.95));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.card-orbit {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(201,168,74,0.25), transparent 45%);
+  filter: blur(14px);
+}
+
+.card-inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+}
+
+.card-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-2);
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+}
+
+.card-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  margin: 0 0 0.65rem;
+}
+
+.card-inner p {
+  color: #d8d0bb;
+  line-height: 1.7;
+}
+
+.section {
+  padding: 2rem 0 1rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.3rem;
+  margin-top: 1rem;
+}
+
+.about-grid p,
+.info-card p,
+.contact-box p {
+  color: #e8dfc5;
+  line-height: 1.8;
+}
+
+.quote-card,
+.info-card,
+.contact-box {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(10,10,10,0.9));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.2rem;
+}
+
+.quote-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  margin: 0;
+  color: var(--accent-2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.astrology-section {
+  padding-top: 2.4rem;
+}
+
+.astrology-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) 1.15fr;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.astrology-form,
+.astrology-output,
+.dasha-panel,
+.chart-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(10,10,10,0.9));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.astrology-form {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.astrology-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #e4d9b6;
+  font-size: 0.95rem;
+}
+
+.astrology-form input {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+}
+
+.astrology-form input:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.astrology-output {
+  padding: 1rem;
+}
+
+.toggle-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.toggle-btn {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 0.6rem 0.95rem;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, var(--accent), #8e6d16);
+  color: #070707;
+  border-color: transparent;
+}
+
+.chart-card {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 0.8fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.kundali-chart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto auto;
+  gap: 0.5px;
+  background: rgba(201, 168, 74, 0.15);
+  padding: 0.5px;
+  border: 1px solid rgba(201, 168, 74, 0.25);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.kundali-chart .row-1 {
+  display: contents;
+}
+
+.kundali-chart .row-2 {
+  display: contents;
+}
+
+.kundali-chart .row-3 {
+  display: contents;
+}
+
+.kundali-chart .row-4 {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5px;
+}
+
+.center-box {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(10,10,10,0.95));
+  border: 1px solid rgba(201, 168, 74, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  padding: 0.5rem;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.kundali-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  grid-column: 1 / -1;
+}
+
+.house {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(10,10,10,0.92));
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f7ebc3;
+  font-size: 0.68rem;
+  padding: 0.6rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90px;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.house strong {
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  margin: 0.15rem 0;
+  font-weight: 600;
+}
+
+.house span:first-child {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+.planets {
+  font-size: 0.65rem;
+  color: #d8d0bb;
+  margin-top: 0.15rem;
+  line-height: 1.1;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.planets > * {
+  word-break: break-word;
+}
+
+.house.active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(201,168,74,0.15), rgba(139,108,20,0.2));
+  box-shadow: 0 0 12px rgba(201,168,74,0.2);
+}
+
+.chart-details h3 {
+  margin: 0 0 0.3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+}
+
+.chart-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-size: 0.76rem;
+  margin: 0 0 0.4rem;
+}
+
+#chart-signature,
+#chart-highlights {
+  color: #e6dcbe;
+  line-height: 1.7;
+}
+
+#chart-highlights {
+  padding-left: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.chart-details {
+  align-self: start;
+}
+
+.dasha-panel {
+  margin-top: 0.9rem;
+  padding: 1rem;
+}
+
+.dasha-panel h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--accent-2);
+}
+
+.dasha-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.dasha-list div {
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  color: #f2e8c7;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-section {
+  padding-bottom: 2rem;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.contact-box a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  border-top: 1px solid rgba(201,168,74,0.16);
+  text-align: center;
+  padding: 1rem 0 2rem;
+  color: #9a906f;
+}
+
+@media (max-width: 860px) {
+  .hero-content,
+  .about-grid,
+  .cards,
+  .astrology-grid,
+  .chart-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .house {
+    width: 58px;
+    min-height: 58px;
+    font-size: 0.64rem;
+  }
+
+  .kundali-chart {
+    width: min(100%, 260px);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .page-shell {
+    width: min(100% - 1.2rem, 1180px);
+  }
+
+  .hero {
+    padding-top: 0.2rem;
+  }
+}

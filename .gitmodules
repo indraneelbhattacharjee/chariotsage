@@ -1,0 +1,3 @@
+[submodule "PyJHora"]
+	path = PyJHora
+	url = https://github.com/naturalstupid/PyJHora.git

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chariot Sage | Indraneel Bhattacharjee</title>
+    <meta
+      name="description"
+      content="Chariot Sage is the personal development and growth brand founded by astrologer Indraneel Bhattacharjee."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="nav">
+          <a href="#home" class="brand">Chariot Sage</a>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#offerings">Offerings</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+
+        <div class="hero-content" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">Astrology • Personal Growth • Inner Clarity</p>
+            <h1>Indraneel Bhattacharjee</h1>
+            <p class="intro">
+              Founder of Chariot Sage — a conscious space for reflection, guidance,
+              and personal transformation through insight, intention, and timeless wisdom.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Connect with Me</a>
+              <a class="btn btn-secondary" href="#offerings">Explore Offerings</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-orbit"></div>
+            <div class="card-inner">
+              <p class="card-label">Guiding light</p>
+              <h2>Navigate life with clarity and purpose.</h2>
+              <p>
+                Each reading is designed to help you align your choices with your truth,
+                unlock growth, and move forward with confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section" id="about">
+          <div class="section-heading">
+            <p class="eyebrow">About the founder</p>
+            <h2>Wisdom rooted in intuition and growth.</h2>
+          </div>
+          <div class="about-grid">
+            <div>
+              <p>
+                Indraneel Bhattacharjee is the founder of Chariot Sage, a personal development
+                and growth brand that blends astrology, reflection, and spiritual guidance.
+              </p>
+              <p>
+                His work is built around helping individuals understand themselves more deeply,
+                make aligned decisions, and step into a version of life that feels purposeful.
+              </p>
+            </div>
+            <div class="quote-card">
+              <p>“The stars illuminate the path, but your intention determines the journey.”</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="offerings">
+          <div class="section-heading">
+            <p class="eyebrow">Offerings</p>
+            <h2>Support for your inner evolution.</h2>
+          </div>
+          <div class="cards">
+            <article class="info-card">
+              <h3>Astrology Guidance</h3>
+              <p>Personalised readings to uncover patterns, timing, and potential in your life.</p>
+            </article>
+            <article class="info-card">
+              <h3>Personal Growth Sessions</h3>
+              <p>Deep conversations that help you reflect, realign, and move forward with purpose.</p>
+            </article>
+            <article class="info-card">
+              <h3>Intentional Mentorship</h3>
+              <p>Ongoing support for those seeking clarity, confidence, and meaningful transformation.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section astrology-section" id="astrology">
+          <div class="section-heading">
+            <p class="eyebrow">Mystic chart</p>
+            <h2>Reveal a personal lagna or moon reading.</h2>
+          </div>
+
+          <div class="astrology-grid">
+            <form class="astrology-form" id="chart-form">
+              <label>
+                <span>Name</span>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+              </label>
+              <label>
+                <span>Date of birth</span>
+                <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" autocomplete="bday" required />
+              </label>
+              <label>
+                <span>Time of birth</span>
+                <input type="text" id="tob" name="tob" placeholder="HH:MM" autocomplete="off" required />
+              </label>
+              <label>
+                <span>Place of birth</span>
+                <input type="text" id="pob" name="pob" placeholder="City, Country" autocomplete="address-level2" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Reveal the chart</button>
+            </form>
+
+            <div class="astrology-output">
+              <div class="toggle-row" role="tablist" aria-label="Chart type">
+                <button type="button" class="toggle-btn active" data-chart="lagna">Lagna</button>
+                <button type="button" class="toggle-btn" data-chart="moon">Moon</button>
+              </div>
+
+              <div class="chart-card" id="chart-output" aria-live="polite">
+                <div class="north-kundali">
+                  <div class="kundali-title">
+                    <p class="chart-kicker" id="chart-kicker">Birth chart preview</p>
+                    <h3 id="chart-title">Lagna chart</h3>
+                    <p id="chart-signature"></p>
+                  </div>
+                  <div class="kundali-chart" id="kundali-chart">
+                    <div class="row-1">
+                      <div class="house house-12" id="house-12"></div>
+                      <div class="house house-1" id="house-1"></div>
+                      <div class="house house-2" id="house-2"></div>
+                    </div>
+                    <div class="row-2">
+                      <div class="house house-11" id="house-11"></div>
+                      <div class="center-box"></div>
+                      <div class="house house-3" id="house-3"></div>
+                    </div>
+                    <div class="row-3">
+                      <div class="house house-10" id="house-10"></div>
+                      <div class="house house-9" id="house-9"></div>
+                      <div class="house house-4" id="house-4"></div>
+                    </div>
+                    <div class="row-4">
+                      <div class="house house-8" id="house-8"></div>
+                      <div class="house house-7" id="house-7"></div>
+                      <div class="house house-6" id="house-6"></div>
+                      <div class="house house-5" id="house-5"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-details">
+                  <ul id="chart-highlights"></ul>
+                </div>
+              </div>
+
+              <div class="dasha-panel">
+                <h4>Dasha flow</h4>
+                <div class="dasha-list" id="dasha-list"></div>
+                <h4>Vimshottari dashas</h4>
+                <div class="dasha-list" id="vimshottari-list"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="section-heading">
+            <p class="eyebrow">Get in touch</p>
+            <h2>Begin your next chapter with insight.</h2>
+          </div>
+          <div class="contact-box">
+            <p>For consultations, collaborations, or inquiries, reach out at:</p>
+            <a href="mailto:connect@chariotsage.com">connect@chariotsage.com</a>
+            <a href="https://chariotsage.com" target="_blank" rel="noreferrer">chariotsage.com</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> Chariot Sage. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
