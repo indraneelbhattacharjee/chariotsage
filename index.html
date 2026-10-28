@@ -52,6 +52,8 @@ nav a:hover{color:var(--ink)}
 
 .hero{position:relative;padding:5rem 0 6rem;overflow:hidden}
 .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 1.75rem;max-width:14em;position:relative}
+.hero h1.hero-quote{font-size:clamp(2rem,5vw,3.8rem);line-height:1.12;max-width:18em}
+.hero .quote-attribution{margin:-.75rem 0 0;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--brass);text-align:right;max-width:36rem}
 .hero p{max-width:34rem;font-size:1.2rem;color:var(--muted);margin:0 0 2.25rem;position:relative}
 .hero-highlights{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:3rem;max-width:62rem}
 .hero-highlight{min-height:10rem;padding:1.25rem 1.35rem;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--rule);box-shadow:0 .8rem 2rem rgba(41,58,44,.07);animation:float 5s ease-in-out infinite}
@@ -124,8 +126,8 @@ h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4vw,2.9rem);l
 
 .note{display:grid;grid-template-columns:6fr 5fr;gap:2.5rem 4rem;align-items:start}
 .note blockquote{margin:0}
-.note blockquote p{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.15;letter-spacing:-.01em;margin:0 0 1.25rem}
-.note cite{display:block;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--brass)}
+.note blockquote p{font-family:var(--serif);font-weight:300;font-size:clamp(1.35rem,2.7vw,2rem);line-height:1.25;letter-spacing:-.01em;margin:0 0 1.1rem}
+.note cite{display:block;margin-top:.25rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--brass);text-align:right}
 .note .msg{margin:0;color:var(--muted);max-width:30rem}
 @media (max-width:760px){.note{grid-template-columns:1fr}}
 .contact h2{max-width:14em}
@@ -156,7 +158,8 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
         <path pathLength="1" d="M0 360 C200 360 300 220 500 200"/>
         <circle cx="500" cy="200" r="6"/>
       </svg>
-      <h1>“Anyone can be a millionaire, but to become a billionaire you need an astrologer.” - J.P. Morgan</h1>
+      <h1 class="hero-quote">“Anyone can be a millionaire, but to become a billionaire you need an astrologer.”</h1>
+      <p class="quote-attribution"><cite>— J.P. Morgan</cite></p>
       <div class="hero-highlights" aria-label="Consultation experience">
         <article class="hero-highlight">
           <h2>Founder transitions</h2>
@@ -233,7 +236,7 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
     <section class="note" id="note">
       <blockquote>
         <p>“A circle will look the same from all angles, so if Astrology is really a science, then it should be scientific and logical from all angles.”</p>
-        <cite>Bhattacharya</cite>
+        <cite>— Indraneel Bhattacharya</cite>
       </blockquote>
     </section>
 
