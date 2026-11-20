@@ -170,6 +170,11 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
 .press-paper .headline{display:block;margin:.3rem 0 .15rem;font-family:var(--serif);font-size:.75rem;font-weight:600;line-height:1.02}
 .press-paper .sub{display:block;color:var(--newsprint-muted);font-size:.42rem;line-height:1.25}
 .press-paper .columns{display:block;height:1.35rem;margin-top:.25rem;background:repeating-linear-gradient(90deg,var(--newsprint-muted) 0 1px,transparent 1px 5px);opacity:.42}
+.press-paper .paper-date{display:block;margin-top:.2rem;color:var(--newsprint-muted);font-size:.38rem}
+.press-paper .paper-image{display:block;width:100%;height:1.6rem;margin-top:.25rem;border-top:1px solid #b8ad9c;object-fit:cover;object-position:center 35%;filter:grayscale(18%)}
+.press-rack-status{margin:1rem 0;color:var(--muted);font-size:.85rem;text-align:center}
+.press-rack-status.error{color:#8a4c39}
+.press-rack-status a,.press-medium-link{color:var(--seal)}
 .press-paper:nth-child(2){--press-tilt:1.5deg}.press-paper:nth-child(3){--press-tilt:-1.3deg}
 .press-shelf-label{position:absolute;right:4px;bottom:-14px;color:var(--surface);font-size:.45rem;letter-spacing:.14em}
 .press-feet{display:flex;justify-content:space-between;margin:0 .25rem}
@@ -190,6 +195,16 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
 .press-kicker{color:#806744;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .press-dek{color:var(--newsprint-muted);font-family:var(--serif);font-size:1.1rem;font-style:italic;line-height:1.35}
 .press-article-grid p{font-size:.88rem;line-height:1.7;text-align:justify}
+.press-article-content{font-size:.88rem;line-height:1.7;overflow-wrap:anywhere}
+.press-article-content img{display:block;width:auto;max-width:100%;height:auto;max-height:42rem;object-fit:contain;margin:1.25rem auto}
+.press-article-content figure{max-width:100%;margin:1.5rem auto;text-align:center}
+.press-article-content figcaption{margin:.5rem auto 0;color:var(--newsprint-muted);font-size:.72rem;text-align:center}
+.press-article-content h1,.press-article-content h2,.press-article-content h3{line-height:1.15;text-align:left}
+.press-article-content blockquote{margin:1rem 0;padding-left:1rem;border-left:3px solid #92744d;font-style:italic}
+.press-article-content a{color:#725a38;overflow-wrap:anywhere}
+.press-article-content .image-fallback{padding:.8rem;border:1px solid var(--newsprint-rule);color:var(--newsprint-muted);font-size:.75rem;text-align:center}
+.press-medium-link{display:inline-block;margin-top:1rem;padding:.65rem .85rem;border:1px solid #92744d;color:#51432f;text-decoration:none;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.press-medium-link:hover{background:#fffdf7}
 .press-side-column{padding-left:1.2rem;border-left:1px solid var(--newsprint-rule)}
 .press-side-column h4{margin:.25rem 0 .5rem;font-family:var(--serif);font-size:1.4rem;font-weight:400;line-height:1.1}
 .press-pullquote{margin:1rem 0;padding:.8rem 0;border-top:2px solid #92744d;border-bottom:2px solid #92744d;font-family:var(--serif);font-size:1.45rem;font-style:italic;line-height:1.2}
@@ -290,26 +305,7 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
         <div class="press-rack">
           <div class="press-topbar" aria-hidden="true"></div><div class="press-upright left" aria-hidden="true"></div><div class="press-upright right" aria-hidden="true"></div>
           <div class="press-rack-scroll" tabindex="0" role="region" aria-label="Newspaper editions. Scroll here to browse the rack.">
-          <div class="press-shelf">
-            <button class="press-paper" data-article="0" type="button" aria-label="Read The Astrological Review"><span class="mast">THE CHARIOT SAGE REVIEW</span><span class="headline">THE ASTROLOGICAL REVIEW</span><span class="sub">Patterns, planets &amp; intention</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="1" type="button" aria-label="Read The Wealth Journal"><span class="mast">THE WEALTH JOURNAL</span><span class="headline">THE PSYCHOLOGY OF WEALTH</span><span class="sub">Capital, behaviour &amp; choice</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="2" type="button" aria-label="Read The Human Condition"><span class="mast">THE HUMAN CONDITION</span><span class="headline">WHY WE SEEK MEANING</span><span class="sub">Decisions, identity &amp; belonging</span><span class="columns" aria-hidden="true"></span></button>
-          </div>
-          <div class="press-shelf">
-            <button class="press-paper" data-article="3" type="button" aria-label="Read The Celestial Gazette"><span class="mast">THE CELESTIAL GAZETTE</span><span class="headline">THE LANGUAGE OF TRANSITS</span><span class="sub">Cycles, timing &amp; interpretation</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="4" type="button" aria-label="Read The Sage’s Commentary"><span class="mast">THE SAGE’S COMMENTARY</span><span class="headline">THE ART OF DISCERNMENT</span><span class="sub">Notes on judgement &amp; perspective</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="5" type="button" aria-label="Read the special edition"><span class="mast">SPECIAL EDITION</span><span class="headline">THE NEXT CHAPTER</span><span class="sub">Ideas shaping the conversation</span><span class="columns" aria-hidden="true"></span></button>
-          </div>
-          <div class="press-shelf">
-            <button class="press-paper" data-article="1" type="button" aria-label="Read Wealth Journal archive"><span class="mast">WEALTH JOURNAL · ARCHIVE</span><span class="headline">BEYOND THE BALANCE SHEET</span><span class="sub">The human side of financial choices</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="2" type="button" aria-label="Read Human Condition archive"><span class="mast">HUMAN CONDITION · ARCHIVE</span><span class="headline">THE INNER NARRATIVE</span><span class="sub">How personal stories shape action</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="0" type="button" aria-label="Read Astrological Review archive"><span class="mast">RESEARCH NOTES</span><span class="headline">A MAP OF THE MIND</span><span class="sub">An astropsychological perspective</span><span class="columns" aria-hidden="true"></span></button>
-          </div>
-          <div class="press-shelf">
-            <button class="press-paper" data-article="3" type="button" aria-label="Read Celestial Gazette archive"><span class="mast">CELESTIAL GAZETTE · ARCHIVE</span><span class="headline">OBSERVING THE CYCLES</span><span class="sub">A study of changing conditions</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="4" type="button" aria-label="Read Commentary archive"><span class="mast">COMMENTARY · ARCHIVE</span><span class="headline">PRINCIPLE BEFORE PREDICTION</span><span class="sub">A considered point of view</span><span class="columns" aria-hidden="true"></span></button>
-            <button class="press-paper" data-article="5" type="button" aria-label="Read editorial archive"><span class="mast">CHARIOT SAGE · EDITION</span><span class="headline">THE EDITORIAL</span><span class="sub">Selected writing from the press room</span><span class="columns" aria-hidden="true"></span></button>
-          </div>
+            <div id="press-shelves" aria-live="polite"><p class="press-rack-status" id="press-rack-status">Loading the Medium archive…</p></div>
           </div>
           <div class="press-feet" aria-hidden="true"><span class="press-wheel"></span><span class="press-wheel"></span></div>
         </div>
@@ -328,9 +324,8 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
               <div class="press-kicker">Featured article</div>
               <h3 id="press-article-title">The map beneath the moment</h3>
               <p class="press-dek" id="press-dek"></p>
-              <p id="press-body-one"></p>
-              <p id="press-body-two"></p>
-              <p id="press-body-three"></p>
+              <div class="press-article-content" id="press-article-content"></div>
+              <a class="press-medium-link" id="press-medium-link" href="https://medium.com/@chariotsage" target="_blank" rel="noopener noreferrer">Read original on Medium ↗</a>
             </div>
             <aside class="press-side-column">
               <div class="press-kicker">Inside this edition</div>
@@ -373,86 +368,11 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
 </div>
 <script>
 (() => {
-  const articles = [
-    {
-      category: 'THE ASTROLOGICAL REVIEW',
-      title: 'The map beneath the moment',
-      dek: 'A birth chart can be approached as a symbolic map for examining intention, emotion and the patterns through which we make sense of our lives.',
-      body: [
-        'Astrological interpretation begins with the whole chart. A single placement is not a verdict; its meaning depends on its relationships with the rest of the horoscope and the question being considered.',
-        'That wider view can help frame useful questions: what is motivating this choice, what pressures are present, and which recurring patterns deserve a closer look?',
-        'The chart offers a perspective for reflection. It does not replace lived experience, practical judgement or the responsibility to make one’s own decisions.'
-      ],
-      side: 'Reading the patterns',
-      sideCopy: 'A considered reading brings individual chart factors into context and keeps the person’s question at the centre.',
-      quote: '“A chart is not the conclusion. It is the beginning of a better question.”'
-    },
-    {
-      category: 'THE WEALTH JOURNAL',
-      title: 'The psychology behind wealth',
-      dek: 'Wealth is shaped not only by resources, but by the perceptions, priorities and decisions that guide their use.',
-      body: [
-        'Financial choices often carry a personal history. Security, ambition, responsibility and family expectations can all influence how people think about preserving or changing what they have built.',
-        'In moments of transition, it can help to distinguish the practical decision from the emotions and assumptions surrounding it. That distinction makes room for clearer conversations and more deliberate planning.',
-        'No single framework can make a complex financial choice on someone’s behalf. Careful analysis works best alongside appropriate professional, legal and financial advice.'
-      ],
-      side: 'Beyond the balance sheet',
-      sideCopy: 'A wider perspective considers the people, values and long-term responsibilities connected to wealth.',
-      quote: '“Resources matter. So does the purpose they are meant to serve.”'
-    },
-    {
-      category: 'THE HUMAN CONDITION',
-      title: 'Why we seek meaning',
-      dek: 'Identity, motivation and personal stories shape the way people interpret experience and choose what comes next.',
-      body: [
-        'People rarely meet a difficult decision as a blank page. Memory, relationships and expectations affect what feels possible, what feels risky and what seems worth protecting.',
-        'Noticing those influences does not diminish them. It can help make a conversation more honest and reveal where an old story may no longer fit present circumstances.',
-        'Reflection is not a substitute for action. It is one way to understand the situation more fully before deciding how to respond.'
-      ],
-      side: 'The inner narrative',
-      sideCopy: 'Understanding the story around a decision can help separate inherited expectations from present priorities.',
-      quote: '“Meaning is often found in the questions we are willing to examine.”'
-    },
-    {
-      category: 'THE CELESTIAL GAZETTE',
-      title: 'The language of transits',
-      dek: 'Cycles and timing are part of astrological practice; interpreting them carefully means keeping context and uncertainty in view.',
-      body: [
-        'In astrology, transits describe how current planetary positions relate to a birth chart. Practitioners use these relationships to explore periods of emphasis and change.',
-        'A transit is not a guarantee of a particular event. Its interpretation depends on the natal chart, the question, and the circumstances of the person whose chart is being considered.',
-        'Used with care, timing techniques can contribute to reflection and preparation. They should not be presented as certainty or as a replacement for sound practical judgement.'
-      ],
-      side: 'Observing the cycles',
-      sideCopy: 'Timing is most useful when interpreted as one part of a broader, individual chart analysis.',
-      quote: '“A period can be studied without pretending its outcome is fixed.”'
-    },
-    {
-      category: 'THE SAGE’S COMMENTARY',
-      title: 'The art of discernment',
-      dek: 'Separating impulse from intention, and information from the judgement required to use it well.',
-      body: [
-        'When the stakes are high, more information does not always make a decision easier. The challenge is to identify what is relevant, what remains uncertain and whose perspective is missing.',
-        'Discernment asks for patience. It tests assumptions, makes room for competing concerns and considers the likely consequences of each available path.',
-        'A useful consultation should clarify the questions before offering interpretation. The final choice remains with the person who must live with it.'
-      ],
-      side: 'Principle before prediction',
-      sideCopy: 'Good judgement starts with a clear question, careful context and an honest account of uncertainty.',
-      quote: '“Clarity comes from weighing the evidence, not from asking for certainty.”'
-    },
-    {
-      category: 'SPECIAL EDITION',
-      title: 'The next chapter',
-      dek: 'Selected perspectives on navigating consequential transitions with care, context and a clear sense of what matters.',
-      body: [
-        'Founder transitions and family disputes can bring business, identity and personal relationships into the same difficult conversation. Each situation has its own history and its own constraints.',
-        'Astrological consultation can offer one interpretive lens for considering patterns and timing. It cannot resolve a dispute by itself or replace direct communication and specialist legal or financial support.',
-        'A considered next step begins by understanding the real question, identifying what can be influenced and treating everyone involved with discretion.'
-      ],
-      side: 'From the editor',
-      sideCopy: 'These editions offer starting points for reflection, not universal answers or promises of an outcome.',
-      quote: '“The next chapter begins with a clearer view of the one you are in.”'
-    }
-  ];
+  const mediumProfile = 'https://medium.com/@chariotsage';
+  const mediumFeed = 'https://medium.com/feed/@chariotsage';
+  const feedProxy = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(mediumFeed);
+  const shelves = document.getElementById('press-shelves');
+  let articles = [];
 
   const reader = document.getElementById('press-reader');
   const readingPaper = reader.querySelector('.press-reading-paper');
@@ -460,18 +380,164 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
   let previouslyFocused = null;
   let previousBodyOverflow = '';
 
+  const safeHttpUrl = (value) => {
+    try {
+      const url = new URL(value, window.location.href);
+      return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : '';
+    } catch {
+      return '';
+    }
+  };
+
+  const plainText = (html) => {
+    const doc = new DOMParser().parseFromString(html || '', 'text/html');
+    return (doc.body.textContent || '').replace(/\\s+/g, ' ').trim();
+  };
+
+  const safeArticleHtml = (html) => {
+    const doc = new DOMParser().parseFromString(html || '', 'text/html');
+    doc.querySelectorAll('script,style,iframe,form,object,embed,link,meta').forEach((node) => node.remove());
+    doc.querySelectorAll('*').forEach((element) => {
+      [...element.attributes].forEach((attribute) => {
+        const name = attribute.name.toLowerCase();
+        const value = attribute.value.trim();
+        if (name.startsWith('on') || name === 'srcset' || name === 'sizes') {
+          element.removeAttribute(attribute.name);
+          return;
+        }
+        if (name === 'href' || name === 'src') {
+          const safeUrl = safeHttpUrl(value.startsWith('//') ? `https:${value}` : value);
+          if (!safeUrl) element.removeAttribute(attribute.name);
+          else element.setAttribute(attribute.name, safeUrl);
+        }
+      });
+      if (element.tagName === 'A') {
+        element.setAttribute('target', '_blank');
+        element.setAttribute('rel', 'noopener noreferrer');
+      }
+      if (element.tagName === 'IMG') {
+        const imageUrl = safeHttpUrl(element.getAttribute('src') || '');
+        const isTrackingPixel = imageUrl.includes('medium.com/_/stat') ||
+          element.getAttribute('width') === '1' || element.getAttribute('height') === '1';
+        if (!imageUrl || isTrackingPixel) {
+          element.remove();
+        } else {
+          element.setAttribute('loading', 'eager');
+          element.setAttribute('decoding', 'async');
+          element.setAttribute('referrerpolicy', 'no-referrer');
+          if (!element.getAttribute('alt')) element.setAttribute('alt', 'Article image');
+        }
+      }
+    });
+    return doc.body.innerHTML;
+  };
+
+  const getArticleImage = (article) => {
+    const directImage = safeHttpUrl(article.thumbnail || '');
+    if (directImage) return directImage;
+    const doc = new DOMParser().parseFromString(article.description || '', 'text/html');
+    const images = [...doc.querySelectorAll('img')];
+    for (const image of images) {
+      const candidate = safeHttpUrl(image.getAttribute('src') || image.getAttribute('data-src') || '');
+      if (candidate && !candidate.includes('medium.com/_/stat') && image.getAttribute('width') !== '1') {
+        return candidate;
+      }
+    }
+    return '';
+  };
+
+  const formatArticleDate = (value) => {
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? '' : new Intl.DateTimeFormat(undefined, {
+      day: 'numeric', month: 'short', year: 'numeric'
+    }).format(date);
+  };
+
+  const renderRack = (items) => {
+    shelves.replaceChildren();
+    if (!items.length) {
+      shelves.innerHTML = `<p class="press-rack-status error">No Medium stories were found. <a href="${mediumProfile}" target="_blank" rel="noopener noreferrer">Visit the Medium profile ↗</a></p>`;
+      return;
+    }
+
+    items.forEach((article, index) => {
+      if (index % 3 === 0) {
+        const shelf = document.createElement('div');
+        shelf.className = 'press-shelf';
+        shelves.append(shelf);
+      }
+      const shelf = shelves.lastElementChild;
+      const button = document.createElement('button');
+      const category = article.categories?.[0] || 'Chariot Sage';
+      const excerpt = plainText(article.description).slice(0, 110);
+      const imageUrl = getArticleImage(article);
+
+      button.type = 'button';
+      button.className = 'press-paper';
+      button.setAttribute('aria-label', `Read ${article.title}`);
+      button.innerHTML = '<span class="mast"></span><span class="headline"></span><span class="sub"></span><span class="paper-date"></span><span class="columns" aria-hidden="true"></span>';
+      button.querySelector('.mast').textContent = category.toUpperCase();
+      button.querySelector('.headline').textContent = article.title || 'Chariot Sage article';
+      button.querySelector('.sub').textContent = excerpt || 'Read this Medium article';
+      button.querySelector('.paper-date').textContent = formatArticleDate(article.pubDate);
+      if (imageUrl) {
+        const image = document.createElement('img');
+        image.className = 'paper-image';
+        image.src = imageUrl;
+        image.alt = '';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.referrerPolicy = 'no-referrer';
+        button.querySelector('.columns').replaceWith(image);
+      }
+      button.addEventListener('click', () => openArticle(index));
+      shelf.append(button);
+    });
+
+    const status = document.createElement('p');
+    status.className = 'press-rack-status';
+    status.textContent = `Showing ${items.length} Medium ${items.length === 1 ? 'story' : 'stories'} · Latest first`;
+    shelves.append(status);
+  };
+
+  const loadMediumArticles = async () => {
+    try {
+      const response = await fetch(feedProxy, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Medium feed request failed (${response.status})`);
+      const feed = await response.json();
+      if (feed.status !== 'ok' || !Array.isArray(feed.items)) {
+        throw new Error(feed.message || 'The Medium feed returned no articles.');
+      }
+      articles = feed.items;
+      renderRack(articles);
+    } catch (error) {
+      console.error('Unable to load the Chariot Sage Medium feed:', error);
+      shelves.innerHTML = `<p class="press-rack-status error">The Medium archive could not load right now. <a href="${mediumProfile}" target="_blank" rel="noopener noreferrer">Open Chariot Sage on Medium ↗</a></p>`;
+    }
+  };
+
   const openArticle = (index) => {
-    const article = articles[index] || articles[0];
-    document.getElementById('press-category').textContent = article.category;
-    document.getElementById('press-edition').textContent = `Chariot Sage · ${article.category}`;
-    document.getElementById('press-article-title').textContent = article.title;
-    document.getElementById('press-dek').textContent = article.dek;
-    document.getElementById('press-body-one').textContent = article.body[0];
-    document.getElementById('press-body-two').textContent = article.body[1];
-    document.getElementById('press-body-three').textContent = article.body[2];
-    document.getElementById('press-side-title').textContent = article.side;
-    document.getElementById('press-side-copy').textContent = article.sideCopy;
-    document.getElementById('press-pullquote').textContent = article.quote;
+    const article = articles[index];
+    if (!article) return;
+    const category = article.categories?.[0] || 'Chariot Sage editorial';
+    document.getElementById('press-category').textContent = category.toUpperCase();
+    document.getElementById('press-edition').textContent = `Chariot Sage · ${category}`;
+    document.getElementById('press-article-title').textContent = article.title || 'Chariot Sage article';
+    document.getElementById('press-dek').textContent = plainText(article.description).slice(0, 260);
+    document.getElementById('press-article-content').innerHTML = safeArticleHtml(article.description || '');
+    document.getElementById('press-side-title').textContent = formatArticleDate(article.pubDate) || 'From the archive';
+    document.getElementById('press-side-copy').textContent = (article.categories || []).join(' · ') || 'A Chariot Sage story from Medium.';
+    document.getElementById('press-pullquote').textContent = 'Read the full story and original publication on Medium.';
+    const mediumLink = document.getElementById('press-medium-link');
+    mediumLink.href = safeHttpUrl(article.link) || mediumProfile;
+    document.querySelectorAll('#press-article-content img').forEach((image) => {
+      image.addEventListener('error', () => {
+        const fallback = document.createElement('div');
+        fallback.className = 'image-fallback';
+        fallback.textContent = 'This image could not be loaded from Medium.';
+        image.replaceWith(fallback);
+      }, { once: true });
+    });
     previouslyFocused = document.activeElement;
     previousBodyOverflow = document.body.style.overflow;
     reader.classList.add('open');
@@ -513,6 +579,7 @@ footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);f
       }
     }
   });
+  loadMediumArticles();
 })();
 </script>
 </body>
